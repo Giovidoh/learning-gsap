@@ -10,13 +10,17 @@ const TimelinesPage = () => {
         gsap.set("#demo", { scale: 0.7 });
         gsap.timeline()
             .to("#demo", { duration: 1, opacity: 1, scale: 1 })
-            .from("#demo h1", { opacity: 0, scale: 0 })
-            .from("#demo p", {
-                opacity: 0,
-                xPercent: -50,
-                stagger: 0.2,
-                ease: "back",
-            });
+            .from("#demo h1", { opacity: 0, scale: 0 }, "+=1")
+            .from(
+                "#demo p",
+                {
+                    opacity: 0,
+                    xPercent: -50,
+                    stagger: 0.2,
+                    ease: "back",
+                },
+                "<"
+            );
     });
     return (
         <div className="flex justify-center items-center h-[100dvh]">
