@@ -18,10 +18,14 @@ const TransformOriginPage = () => {
 
             const tween = gsap.fromTo(
                 "#blueBox",
-                { rotation: 0 },
+                { scale: 1 },
                 {
                     transformOrigin: `${x} ${y}`,
-                    rotation: 360,
+                    // rotation: 360,
+                    scale: 0,
+                    duration: 0.5,
+                    repeat: 1,
+                    yoyo: true,
                 }
             );
             tween.restart();
