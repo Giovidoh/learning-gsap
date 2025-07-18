@@ -21,8 +21,6 @@ const TimelinesPage = () => {
                 ease: "back",
             });
 
-        animation.play("test");
-
         document
             .getElementById("play")
             ?.addEventListener("click", () => animation.play());
