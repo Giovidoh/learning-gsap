@@ -13,13 +13,13 @@ const HoleJumper = () => {
         const shadow = document.getElementById("shadow");
 
         const tl = gsap
-            .timeline()
+            .timeline({ repeat: 1, yoyo: true, repeatDelay: 0.5 })
             .from(hole, { scale: 0, repeat: 1, yoyo: true })
             .fromTo(herman, { y: 160, scaleY: 2 }, { y: -175, scaleY: 1 }, 0.2)
-            .to(herman, { y: 0, ease: "power1.in" }, ">")
+            .to(herman, { y: -4, ease: "power1.in" }, ">")
             .to(herman, {
                 scaleY: 0.8,
-                scale: 1.2,
+                scaleX: 1.2,
                 duration: 0.2,
                 transformOrigin: "50% 100%",
                 repeat: 1,
@@ -51,7 +51,7 @@ const HoleJumper = () => {
                     id="hole"
                     className="absolute top-[290px] left-1/2 -translate-x-1/2 bg-black w-[150px] h-[20px] rounded-[50%]"
                 ></div>
-                <div className="relative w-full h-[300px] overflow-hidden">
+                <div className="relative w-full h-[305px] overflow-hidden rounded-[50%]">
                     <img
                         id="herman"
                         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100px]"
