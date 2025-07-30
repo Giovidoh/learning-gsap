@@ -3,8 +3,9 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { GSDevTools } from "gsap/GSDevTools";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, GSDevTools);
 
 const HoleJumper = () => {
     useGSAP(() => {
@@ -27,18 +28,9 @@ const HoleJumper = () => {
             })
             .to(shadow, { opacity: 1, duration: 0.2 }, 0.6)
             .to(shadow, { scaleX: 0.7, ease: "power1.in" }, ">");
-    });
 
-    useEffect(() => {
-        if (process.env.NODE_ENV === "development") {
-            // Only import GSDevTools in the browser and dev mode
-            import("gsap/GSDevTools").then((module) => {
-                const GSDevTools = module.default;
-                gsap.registerPlugin(GSDevTools);
-                GSDevTools.create();
-            });
-        }
-    }, []);
+        GSDevTools.create();
+    });
 
     return (
         <div className="flex justify-center items-center bg-cyan-900 w-full h-full">

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -35,16 +34,6 @@ const AnimatedButtons = () => {
         });
     });
 
-    // useEffect(() => {
-    //     if (process.env.NODE_ENV === "development") {
-    //         // Only import GSDevTools in the browser and dev mode
-    //         import("gsap/GSDevTools").then((module) => {
-    //             const GSDevTools = module.default;
-    //             gsap.registerPlugin(GSDevTools);
-    //             GSDevTools.create();
-    //         });
-    //     }
-    // }, []);
     return (
         <div className="flex flex-col w-full h-full gap-4 bg-radial from-[#222222] to-[#000000] p-5">
             <div className="item flex items-center gap-2 cursor-pointer w-fit">

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -24,16 +23,6 @@ const PulseButton = () => {
         });
     });
 
-    // useEffect(() => {
-    //     if (process.env.NODE_ENV === "development") {
-    //         // Only import GSDevTools in the browser and dev mode
-    //         import("gsap/GSDevTools").then((module) => {
-    //             const GSDevTools = module.default;
-    //             gsap.registerPlugin(GSDevTools);
-    //             GSDevTools.create();
-    //         });
-    //     }
-    // }, []);
     return (
         <div className="flex flex-col items-center justify-center w-full h-full p-5">
             <button
