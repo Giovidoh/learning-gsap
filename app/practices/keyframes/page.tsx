@@ -16,7 +16,7 @@ const Keyframes = () => {
     });
   });
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-5 bg-radial from-[#111111] to-black">
+    <div className="flex flex-col items-center justify-center w-full h-full p-5 bg-conic-120 from-[#111111] to-black bg-auto">
       <div id="box" className="bg-green-600 w-[50px] h-[50px] rounded-md"></div>
     </div>
   );
